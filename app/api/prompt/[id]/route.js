@@ -16,11 +16,11 @@ export const GET = async (request, { params }) => {
 }
 
 export const PATCH = async (request, { params }) => {
-    const { prompt, tag } = await request.json();
+    const { title, prompt, tag } = await request.json();
 
+    
     try {
         await connectToDB();
-
         // Find the existing prompt by ID
         const existingPrompt = await Prompt.findById(params.id);
 
@@ -29,6 +29,7 @@ export const PATCH = async (request, { params }) => {
         }
 
         // Update the prompt with new data
+        existingPrompt.title = title;
         existingPrompt.prompt = prompt;
         existingPrompt.tag = tag;
 

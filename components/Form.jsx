@@ -14,9 +14,24 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         onSubmit={handleSubmit}
         className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism'
       >
+
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
-          Your verse
+          Title{" "}
+          </span>
+          <input
+            value={post.title}
+            onChange={(e) => setPost({ ...post, title: e.target.value })}
+            type='text'
+            placeholder='Title'
+            required
+            className='form_input'
+          />
+        </label>
+
+        <label>
+          <span className='font-satoshi font-semibold text-base text-gray-700'>
+          Verse
           </span>
 
           <textarea
@@ -30,16 +45,16 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
 
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
-          Your tag{" "}
+          Tag{" "}
             <span className='font-normal'>
-              (#poetry, #quotes, #rhymes, etc.)
+              (poetry, quotes, lyrics, etc.)
             </span>
           </span>
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
             type='text'
-            placeholder='#Tag'
+            placeholder='Tag'
             required
             className='form_input'
           />
