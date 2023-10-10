@@ -16,7 +16,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
       >
 
         <label>
-          <span className='font-satoshi font-semibold text-base text-gray-700'>
+          <span className='font-sans font-semibold text-base text-gray-700'>
           Title{" "}
           </span>
           <input
@@ -30,7 +30,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         </label>
 
         <label>
-          <span className='font-satoshi font-semibold text-base text-gray-700'>
+          <span className='font-sans font-semibold text-base text-gray-700'>
           Verse
           </span>
 
@@ -44,7 +44,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         </label>
 
         <label>
-          <span className='font-satoshi font-semibold text-base text-gray-700'>
+          <span className='font-sans font-semibold text-base text-gray-700'>
           Tag{" "}
             <span className='font-normal'>
               (poetry, quotes, lyrics, etc.)

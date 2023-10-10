@@ -34,12 +34,16 @@ const Nav = () => {
       {/* Desktop Navigation */}
       <div className='sm:flex hidden'>
         {session?.user ? (
-          <div className='flex gap-3 md:gap-5'>
-            <Link href='/create-prompt' className='black_btn'>
+          <div className='flex gap-2 md:gap-3'>
+            <Link href='/feed' className='gray_btn'>
+              Poetry Feed
+            </Link>
+
+            <Link href='/create-prompt' className='gray_btn'>
               Create Verse
             </Link>
 
-            <button type='button' onClick={signOut} className='outline_btn'>
+            <button type='button' onClick={signOut} className='gray_btn'>
               Sign Out
             </button>
 
