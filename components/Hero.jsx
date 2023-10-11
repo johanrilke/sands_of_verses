@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { StarsIllustration } from '@components/Stars';
 import { motion } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
 
 const yVariants = {
     initial: {
@@ -24,6 +25,8 @@ const yVariants = {
 }
 
 const Hero = () => {
+
+    const { ref, inView } = useInView({ threshold: 0.4, triggerOnce: true });
 
     const [providers, setProviders] = useState(null);
 
@@ -91,6 +94,32 @@ const Hero = () => {
             <span>“And because it is my heart.”</span>
             </p>
         </motion.div>
+
+        <div ref={ref} className="mt-[12.8rem] [perspective:2000px]">
+        <div
+            className={`relative rounded-xl border border-transparent-white bg-white bg-opacity-[0.02] bg-gradient-to-br from-purple-200 via-transparent to-blue-200 ${inView ? "animate-image-rotate" : "[transform:rotateX(35deg)]"}
+            "before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-hero-glow before:opacity-0 before:[filter:blur(120px)]",
+            ${inView && 'before:animate-image-glow'}
+            `}
+        >
+            <Image className={`relative z-10 transition-opacity delay-[680ms] ${inView ? 'opacity-100' : 'opacity-20'} w-full h-auto`}
+            alt="Hero image"
+            src="/assets/images/ryan.jpg"
+            width={650}
+            height={360}
+            sizes='(min-width: 2420px) 2000px, 
+            (min-width: 720px) calc(94.76vw - 274px), 
+            (min-width: 520px) calc(100vw - 96px), 
+            calc(100vw - 32px)'
+            style={{
+                objectFit: 'cover',
+            }}
+            priority={true}
+            >
+
+            </Image>
+        </div>
+       </div>
 
         {/* <StarsIllustration />
 

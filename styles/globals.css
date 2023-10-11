@@ -212,7 +212,7 @@ body {
 
 /* Hero Component */
 .hero {
-	@apply mt-12 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
+	@apply mt-12 mx-auto w-full max-w-5xl flex justify-center items-center flex-col gap-2;
 }
 
 .pink_sun {
